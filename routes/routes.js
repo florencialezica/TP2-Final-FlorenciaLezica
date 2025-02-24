@@ -6,4 +6,5 @@ const routes = Router();
 
 routes.get("/", controller.metodo);
 
+
 export default routes;
