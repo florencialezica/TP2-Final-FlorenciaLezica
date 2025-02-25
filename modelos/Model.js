@@ -1,11 +1,26 @@
 class Model{
 
     data = [
-        //hacer el array
-    ];
+        { donacion : 2344, donante: "Juan" },
+        { donacion: 222, donante: "Marta" },
+      ];
     
-    //hacer los metodos que van a usar la data acá 
+
+    createDonacion = (donacion , donante) => {
+        this.data.push({
+            donacion,
+            donante,
+        });
+        
+        return "Se cargó la donación correctamente";
+    }
     
-    
+    listarDonaciones = (monto) => {  
+
+        return this.data.filter(donacion => donacion.donacion > monto && donacion.donante !== "anónimo")
+
+    }
+
     }
     export default Model;
+

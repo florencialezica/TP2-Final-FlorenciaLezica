@@ -1,22 +1,33 @@
-import Model from "../models/Model.js";
+import Model from "../modelos/Model.js";
 
-
-//consultas a apis y verificaiones se hacen aca
-//if (!palabra) throw new Error("Tenes que ingresar una palabra");
 
 class Service{
     model = new Model();
 
-    metodo = async () =>{
+    createDonacionService = async (donacion , donante) =>{
         try {
-            //usando el modelo hacer la logica
-            return "hola"
+            if(donacion <= 0) throw new Error("El monto de la donación no puede ser menor a 0");
+            
+            if(donante === null){
+                donante = "anónimo"
+            }
+            const donacionCreada = await this.model.createDonacion(donacion,donante);
+            return donacionCreada;
         } catch (error) {
             throw error;
         }
 
     }
 
+    listarDonacionesService = async(monto) => {
+        try{
+            const donaciones = await this.model.listarDonaciones(monto);
+            return donaciones;
+
+        }catch(error){
+            throw error;
+        }
+    }
 
 
 

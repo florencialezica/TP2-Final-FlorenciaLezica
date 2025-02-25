@@ -11,6 +11,6 @@ app.use(routes)
 
 
 
-app.listen(8080, ()=>{
-     console.log("server on port 8080")
+app.listen(8000, ()=>{
+     console.log("server on port 8000")
 })

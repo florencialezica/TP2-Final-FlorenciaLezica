@@ -4,7 +4,8 @@ import Controller from "../controllers/Controller.js";
 const controller= new Controller()
 const routes = Router();
 
-routes.get("/", controller.metodo);
+routes.post("/", controller.createDonacion);
+routes.get("/" , controller.listarDonaciones);
 
 
 export default routes;
